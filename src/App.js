@@ -7,6 +7,8 @@ import {boardDefault} from "./Words"
 //para acessar por outros componentes
 export const AppContext = createContext();
 
+//variaveis com acesso global ao projeto
+
 function App() {
   const [board, setBoard] = useState(boardDefault)
   return ( 
@@ -14,7 +16,6 @@ function App() {
       <nav>
         <h1>Charada</h1>
       </nav>
-      //variaveis com acesso global ao projeto
       <AppContext.Provider value={{board, setBoard}}>
         <Board />
         <Keyboard />
