@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Key({keyVal}) {
+function Key({ keyVal, specialKey }) {
   return (
-    <div className='key'>{keyVal}</div>
+    <div className='key' id={specialKey && "big"}>{keyVal}</div>
   )
 }
 

@@ -1,8 +1,8 @@
-import React, {useContext} from 'react'
-import {AppContext} from "../App"
+import React, { useContext } from 'react'
+import { AppContext } from "../App"
 
 function Letter({ letterPos, attemptVal }) {
-  const {board} = useContext(AppContext)
+  const { board } = useContext(AppContext)
   const letter = board[attemptVal][letterPos]
 
   return (

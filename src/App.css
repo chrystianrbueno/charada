@@ -3,7 +3,6 @@
   background-color: #121212;
   width: 100vw;
   height: 100vh;
-  /* display: flex; */
   color: white;
 }
 
@@ -27,6 +26,7 @@ nav h1 {
   color: white;
   font-size: 45px;
 }
+
 .game {
   width: 100vw;
   height: calc(100vh - 170px);
@@ -90,6 +90,7 @@ nav h1 {
   justify-content: center;
   margin: 5px;
 }
+
 .line2 {
   flex: 33%;
   display: flex;
@@ -97,6 +98,7 @@ nav h1 {
   justify-content: center;
   margin: 5px;
 }
+
 .line3 {
   flex: 33%;
   display: flex;
@@ -122,6 +124,7 @@ nav h1 {
 #big {
   width: 100px;
 }
+
 #disabled {
   background-color: #3a393c;
 }
