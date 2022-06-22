@@ -1,8 +1,8 @@
 import './App.css';
 import Board from './components/Board';
 import Keyboard from './components/Keyboard';
-import { createContext, useState } from "react";
-import { boardDefault } from "./Words"
+import { createContext, useEffect, useState } from "react";
+import { boardDefault, generateWordSet } from "./Words"
 
 //para acessar por outros componentes
 export const AppContext = createContext();
@@ -12,7 +12,14 @@ export const AppContext = createContext();
 function App() {
   const [board, setBoard] = useState(boardDefault)
   const [currAttempt, setCurrAttempt] = useState({attempt: 0, letterPos: 0})
-   
+
+  const correctWord = "RIGHT"
+
+  useEffect(() => {
+    generateWordSet().then((words) =>{
+      console.log(words)})
+  }, [])
+
   // Incremento das letras no grid, aumentando posição em cada ocorrência
   const onSelectLetter = (keyVal) => {
     if (currAttempt.letterPos > 4) return;
@@ -43,7 +50,7 @@ function App() {
       <nav>
         <h1>Charada</h1>
       </nav>
-      <AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter}}>
+      <AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter, correctWord}}>
         <div className='game'>
           <Board />
           <Keyboard />
@@ -53,4 +60,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
