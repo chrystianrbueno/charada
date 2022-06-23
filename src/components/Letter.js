@@ -9,7 +9,8 @@ function Letter({ letterPos, attemptVal }) {
   //a letra não pode estar na posição correta, não vazia e deve estar inclusa na palavra 
   const almost = !correct && letter !== "" && correctWord.toUpperCase().includes(letter)
   const letterState = currAttempt.attempt > attemptVal && (correct ? "correct" : almost ? "almost" : "error")
-  console.log(correctWord)
+  // habilitar para verificar palavra correta no console para teste
+  // console.log(correctWord)
   return (
     <div className='letter' id={letterState}>{letter}</div>
   )
